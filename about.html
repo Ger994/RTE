@@ -32,5 +32,33 @@
       <p>Choose RT Electrical for peace of mind and service you can rely on.</p>
     </div>
   </section>
+
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="carousel">
+      <div class="testimonial active">
+        <p>"RT Electrical responded quickly and fixed our fuse board the same day. Professional, friendly, and efficient."</p>
+        <span>— Laura, Glasgow</span>
+      </div>
+      <div class="testimonial">
+        <p>"We use RT Electrical for all our landlord safety checks. Reliable service every time."</p>
+        <span>— Mark, Edinburgh</span>
+      </div>
+      <div class="testimonial">
+        <p>"Top-quality work on our office refit. The lighting and wiring setup is flawless."</p>
+        <span>— Sarah, Dundee</span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let current = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    setInterval(() => {
+      testimonials[current].classList.remove('active');
+      current = (current + 1) % testimonials.length;
+      testimonials[current].classList.add('active');
+    }, 5000);
+  </script>
 </body>
 </html>
