@@ -299,3 +299,47 @@ a {
   max-height: 90%;
   border-radius: 8px;
 }
+
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  background: linear-gradient(135deg, #e53935, #b71c1c);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Custom Button Variants */
+.btn.call-btn {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+}
+
+.btn.call-btn:hover {
+  background: linear-gradient(135deg, #388e3c, #1b5e20);
+}
+
+.btn.email-btn {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+}
+
+.btn.email-btn:hover {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+}
+
+.btn.google-btn {
+  background: linear-gradient(135deg, #4285F4, #3367d6);
+}
+
+.btn.google-btn:hover {
+  background: linear-gradient(135deg, #3367d6, #1a49b4);
+}
