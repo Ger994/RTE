@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RT Electrical</title>
+  <title>RT Electrical - Home</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </head>
 <body>
   <header class="topbar">
@@ -16,48 +17,95 @@
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <nav>
-      <a href="about.html">About</a>
+      <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
-      <a class="btn emergency" href="tel:01234567890">Emergency Call</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Professional <span>Electrical Services</span><br />Across Scotland</h1>
-      <p>
-        Trusted electrical contractors providing comprehensive domestic,
-        commercial, and industrial electrical solutions throughout Scotland.
-        Available 24/7 for emergency callouts.
-      </p>
-      <div class="buttons">
-        <a href="contact.html" class="btn primary">Get Free Quote</a>
-        <a href="tel:01234567890" class="btn secondary">01234 567 890</a>
-      </div>
-      <div class="badges">
-        <span>✔ Fully Insured</span>
-        <span>✔ NICEIC Approved</span>
-        <span>✔ 24/7 Emergency</span>
-      </div>
+      <h1>About RT Electrical</h1>
+      <p>At RT Electrical, we are committed to delivering safe, reliable, and professional electrical services across Scotland. With years of industry experience, our team of qualified electricians handles projects of all sizes—from minor domestic repairs to large-scale commercial installations.</p>
+      <p>Customer satisfaction and safety are at the core of everything we do. We are NICEIC approved, fully insured, and operate 24/7 to ensure we’re there when you need us most.</p>
+      <p>Our approach is built on trust, technical expertise, and an unwavering commitment to high standards. Whether you’re a homeowner, landlord, or business, we take the time to understand your needs and provide tailored solutions with transparent pricing and top-quality workmanship.</p>
+      <p>Choose RT Electrical for peace of mind and service you can rely on.</p>
     </div>
   </section>
 
-  <section class="services">
-    <div class="hero-text">
-      <h2>Our Electrical Services Across Scotland</h2>
-      <ul>
-        <li>Domestic wiring, rewiring, and fuse board upgrades</li>
-        <li>Commercial lighting, power distribution, and compliance testing</li>
-        <li>Industrial electrical installations and maintenance</li>
-        <li>EV charger installations for homes and businesses</li>
-        <li>Emergency electrical repairs — 24/7 availability</li>
-        <li>Landlord electrical safety checks (EICR)</li>
-        <li>Fire alarm and smoke detector installations</li>
-        <li>Security lighting and CCTV system wiring</li>
-      </ul>
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="carousel" id="carousel">
+      <div class="testimonial active">
+        <p>"RT Electrical responded quickly and fixed our fuse board the same day. Professional, friendly, and efficient."</p>
+        <span>— Laura, Glasgow</span>
+      </div>
+      <div class="testimonial">
+        <p>"We use RT Electrical for all our landlord safety checks. Reliable service every time."</p>
+        <span>— Mark, Edinburgh</span>
+      </div>
+      <div class="testimonial">
+        <p>"Top-quality work on our office refit. The lighting and wiring setup is flawless."</p>
+        <span>— Sarah, Dundee</span>
+      </div>
+    </div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
   </section>
+
+  <section class="google-reviews">
+    <h2>Live Google Reviews</h2>
+    <p>See what real customers are saying about us on Google.</p>
+    <div class="google-reviews-widget">
+      <!-- Elfsight Google Reviews -->
+      <div class="elfsight-app-6b01a66c-4f0a-479d-a3f0-bfcd6e31fee8" data-elfsight-app-lazy></div>
+    </div>
+  </section>
+
+  <script>
+    let current = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.dot');
+    const carousel = document.getElementById('carousel');
+
+    function showTestimonial(index) {
+      testimonials.forEach(t => t.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      testimonials[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    function nextTestimonial() {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        current = index;
+        showTestimonial(current);
+      });
+    });
+
+    setInterval(nextTestimonial, 5000);
+
+    let startX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+    carousel.addEventListener('touchend', (e) => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) {
+        nextTestimonial();
+      } else if (endX - startX > 50) {
+        current = (current - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(current);
+      }
+    });
+  </script>
 </body>
 </html>
