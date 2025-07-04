@@ -24,7 +24,100 @@
     </nav>
   </header>
 
-  <section class="hero">
+  
+  
+  <section class="contact-gallery">
+    <div class="contact-buttons">
+      <a class="btn call-btn" href="tel:+447799531890">📞 Call Us</a>
+      <a class="btn email-btn" href="mailto:info@example.com">✉️ Email Us</a>
+    </div>
+    <div class="gallery-carousel">
+      <h2>Our Work</h2>
+      <div class="gallery-nav">
+        <button onclick="prevGallerySlide()" class="nav-btn">&#10094;</button>
+        <div class="gallery-track" id="gallery-track">
+<img src="images/gallery/image1.jpg" alt="Gallery Image 1" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image2.jpg" alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image3.jpg" alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image4.jpg" alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image5.jpg" alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image6.jpg" alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image7.jpg" alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image8.jpg" alt="Gallery Image 8" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image9.jpg" alt="Gallery Image 9" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image10.jpg" alt="Gallery Image 10" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image11.jpg" alt="Gallery Image 11" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image12.jpg" alt="Gallery Image 12" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image13.jpg" alt="Gallery Image 13" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image14.jpg" alt="Gallery Image 14" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image15.jpg" alt="Gallery Image 15" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image16.jpg" alt="Gallery Image 16" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image17.jpg" alt="Gallery Image 17" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image18.jpg" alt="Gallery Image 18" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image19.jpg" alt="Gallery Image 19" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image20.jpg" alt="Gallery Image 20" class="gallery-img" onclick="openLightbox(this.src)" />
+        </div>
+        <button onclick="nextGallerySlide()" class="nav-btn">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="#" alt="Full Image" />
+  </div>
+
+  <script>
+    let galleryIndex = 0;
+    const images = document.querySelectorAll('.gallery-img');
+    const totalImages = images.length;
+    const visibleImages = 4;
+
+    function showGalleryImages() {
+      images.forEach((img, idx) => {
+        img.style.display = (idx >= galleryIndex && idx < galleryIndex + visibleImages) ? 'inline-block' : 'none';
+      });
+    }
+
+    function nextGallerySlide() {
+      galleryIndex = (galleryIndex + visibleImages) % totalImages;
+      showGalleryImages();
+    }
+
+    function prevGallerySlide() {
+      galleryIndex = (galleryIndex - visibleImages + totalImages) % totalImages;
+      showGalleryImages();
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    // Swipe support
+    const galleryTrack = document.getElementById('gallery-track');
+    let startX = 0;
+
+    galleryTrack.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    galleryTrack.addEventListener('touchend', (e) => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) {
+        nextGallerySlide();
+      } else if (endX - startX > 50) {
+        prevGallerySlide();
+      }
+    });
+
+    window.addEventListener('load', showGalleryImages);
+    setInterval(nextGallerySlide, 5000);
+  </script>
+<section class="hero">
     <div class="hero-text">
       <h1>About RT Electrical</h1>
       <p>At RT Electrical, we are committed to delivering safe, reliable, and professional electrical services across Scotland. With years of industry experience, our team of qualified electricians handles projects of all sizes—from minor domestic repairs to large-scale commercial installations.</p>
