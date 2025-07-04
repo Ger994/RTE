@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - RT Electrical</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </head>
 <body>
   <header class="topbar">
@@ -35,7 +37,7 @@
 
   <section class="testimonials">
     <h2>What Our Clients Say</h2>
-    <div class="carousel">
+    <div class="carousel" id="carousel">
       <div class="testimonial active">
         <p>"RT Electrical responded quickly and fixed our fuse board the same day. Professional, friendly, and efficient."</p>
         <span>— Laura, Glasgow</span>
@@ -49,16 +51,62 @@
         <span>— Sarah, Dundee</span>
       </div>
     </div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <section class="google-reviews">
+    <h2>Live Google Reviews</h2>
+    <p>See what real customers are saying about us on Google.</p>
+    <div class="google-reviews-widget">
+      <!-- Elfsight Google Reviews -->
+      <div class="elfsight-app-6b01a66c-4f0a-479d-a3f0-bfcd6e31fee8" data-elfsight-app-lazy></div>
+    </div>
   </section>
 
   <script>
     let current = 0;
     const testimonials = document.querySelectorAll('.testimonial');
-    setInterval(() => {
-      testimonials[current].classList.remove('active');
+    const dots = document.querySelectorAll('.dot');
+    const carousel = document.getElementById('carousel');
+
+    function showTestimonial(index) {
+      testimonials.forEach(t => t.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      testimonials[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    function nextTestimonial() {
       current = (current + 1) % testimonials.length;
-      testimonials[current].classList.add('active');
-    }, 5000);
+      showTestimonial(current);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        current = index;
+        showTestimonial(current);
+      });
+    });
+
+    setInterval(nextTestimonial, 5000);
+
+    let startX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+    carousel.addEventListener('touchend', (e) => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) {
+        nextTestimonial();
+      } else if (endX - startX > 50) {
+        current = (current - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(current);
+      }
+    });
   </script>
 </body>
 </html>
