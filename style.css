@@ -59,7 +59,41 @@ nav a:hover {
     color: #dc143c;
 }
 
-/* Sticky Bar */
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    display: flex;
+}
+
+.mobile-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+/* Sticky Bar - Hidden on mobile */
 .sticky-bar {
     position: fixed;
     top: 80px;
@@ -71,6 +105,12 @@ nav a:hover {
     justify-content: center;
     gap: 2rem;
     z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .sticky-bar {
+        display: none;
+    }
 }
 
 .sticky-bar a {
@@ -91,7 +131,7 @@ nav a:hover {
 
 /* Main Content */
 main {
-    margin-top: 140px;
+    margin-top: 80px;
 }
 
 section {
@@ -403,7 +443,7 @@ textarea {
 }
 
 /* Popup Styles */
-.thank-you-popup {
+.thank-you-popup, #error-popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -416,15 +456,17 @@ textarea {
     z-index: 2000;
 }
 
-.thank-you-content {
+.thank-you-content, .error-content {
     background: linear-gradient(135deg, #2c2c2c 0%, #1e1e1e 100%);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 400px;
+    margin: 0 20px;
 }
 
-.thank-you-content button {
+.thank-you-content button, .error-content button {
     background: #dc143c;
     color: #fff;
     border: none;
@@ -432,6 +474,15 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
+}
+
+.error-content {
+    border: 1px solid #dc143c;
+}
+
+.error-content h3 {
+    color: #dc143c;
+    margin-bottom: 1rem;
 }
 
 /* Animation Styles */
@@ -449,42 +500,69 @@ textarea {
 /* Responsive Design */
 @media (max-width: 768px) {
     .topbar {
-        flex-direction: column;
-        gap: 1rem;
         padding: 1rem;
     }
 
     nav {
-        gap: 1rem;
+        display: none;
     }
 
-    .sticky-bar {
-        top: 120px;
-        flex-direction: column;
-        gap: 1rem;
+    .mobile-menu-toggle {
+        display: block;
     }
 
     main {
-        margin-top: 180px;
+        margin-top: 80px;
     }
 
     .contact-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .badges {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .gallery-track {
-        flex-direction: column;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 100%;
+        padding: 0 1rem;
     }
 
     .gallery-img {
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .gallery-nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .get-in-touch-section {
+        padding: 30px 15px;
+    }
+
+    .our-work-section {
+        padding: 40px 15px;
     }
 }
