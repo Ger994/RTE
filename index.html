@@ -105,7 +105,37 @@ function closePopup() {
     </div>
   </section>
 
-  <section class="testimonials animated-section">
+  
+<section class="booking-form animated-section">
+  <h2>Book a Free Quote</h2>
+  <form action="https://formspree.io/f/mgeqqyrr" method="POST" onsubmit="showPopup(event)">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="tel" name="phone" placeholder="Your Phone Number" required />
+    <textarea name="message" placeholder="What do you need help with?" required></textarea>
+    <button type="submit" class="btn primary">Submit</button>
+  </form>
+</section>
+
+<section class="gallery-carousel animated-section">
+  <h2>Our Work</h2>
+  <div class="gallery-nav">
+    <button onclick="prevGallerySlide()" class="nav-btn">&#10094;</button>
+    <div class="gallery-track" id="gallery-track">
+<img src="images/gallery/image1.jpg" alt="Gallery Image 1" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image2.jpg" alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image3.jpg" alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image4.jpg" alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image5.jpg" alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image6.jpg" alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image7.jpg" alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image8.jpg" alt="Gallery Image 8" class="gallery-img" onclick="openLightbox(this.src)" />
+    </div>
+    <button onclick="nextGallerySlide()" class="nav-btn">&#10095;</button>
+  </div>
+</section>
+
+<section class="testimonials animated-section">
     <h2>What Our Clients Say</h2>
     <div class="carousel">
       <div class="testimonial active">
