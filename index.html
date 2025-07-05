@@ -6,7 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RT Electrical - Home</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <script src="https://static.elfsight.com/platform/platform.js" async>
+function showPopup(e) {
+  e.preventDefault();
+  const form = e.target;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById("thank-you-popup").style.display = "flex";
+      form.reset();
+    }
+  });
+}
+
+function closePopup() {
+  document.getElementById("thank-you-popup").style.display = "none";
+}
+
+</script>
 </head>
 <body>
   <header class="topbar">
@@ -24,9 +46,13 @@
     </nav>
   </header>
 
-  
-  
+  <div class="sticky-bar">
+    <a href="tel:+447799531890">📞 Call</a>
+    <a href="mailto:info@example.com">✉️ Email</a>
+  </div>
+
   <section class="contact-gallery">
+    <h2>Get in Touch</h2>
     <div class="contact-buttons">
       <a class="btn call-btn" href="tel:+447799531890">📞 Call Us</a>
       <a class="btn email-btn" href="mailto:info@example.com">✉️ Email Us</a>
@@ -36,13 +62,26 @@
       <div class="gallery-nav">
         <button onclick="prevGallerySlide()" class="nav-btn">&#10094;</button>
         <div class="gallery-track" id="gallery-track">
-<img src="images/gallery/image1.jfif" alt="Gallery Image 1" class="gallery-img" onclick="openLightbox(this.src)" />
-<img src="images/gallery/image2.jfif" alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" />
-<img src="images/gallery/image3.jfif" alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" />
-<img src="images/gallery/image4.jfif" alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" />
-<img src="images/gallery/image5.jfif" alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" />
-<img src="images/gallery/image6.jfif" alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" />
-<img src="images/gallery/image7.jfif" alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image1.jpg" alt="Gallery Image 1" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image2.jpg" alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image3.jpg" alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image4.jpg" alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image5.jpg" alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image6.jpg" alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image7.jpg" alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image8.jpg" alt="Gallery Image 8" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image9.jpg" alt="Gallery Image 9" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image10.jpg" alt="Gallery Image 10" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image11.jpg" alt="Gallery Image 11" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image12.jpg" alt="Gallery Image 12" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image13.jpg" alt="Gallery Image 13" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image14.jpg" alt="Gallery Image 14" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image15.jpg" alt="Gallery Image 15" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image16.jpg" alt="Gallery Image 16" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image17.jpg" alt="Gallery Image 17" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image18.jpg" alt="Gallery Image 18" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image19.jpg" alt="Gallery Image 19" class="gallery-img" onclick="openLightbox(this.src)" />
+<img src="images/gallery/image20.jpg" alt="Gallery Image 20" class="gallery-img" onclick="openLightbox(this.src)" />
         </div>
         <button onclick="nextGallerySlide()" class="nav-btn">&#10095;</button>
       </div>
@@ -53,7 +92,86 @@
     <img id="lightbox-img" src="#" alt="Full Image" />
   </div>
 
+  <section class="hero text-center">
+    <h2>Who We Are</h2>
+    <div class="hero-text">
+      <p>At RT Electrical, we are committed to delivering safe, reliable, and professional electrical services across Scotland. With years of industry experience, our team of qualified electricians handles projects of all sizes—from minor domestic repairs to large-scale commercial installations.</p>
+      <p>Customer satisfaction and safety are at the core of everything we do. We are NICEIC approved, fully insured, and operate 24/7 to ensure we’re there when you need us most.</p>
+      <p>Our approach is built on trust, technical expertise, and an unwavering commitment to high standards. Whether you’re a homeowner, landlord, or business, we take the time to understand your needs and provide tailored solutions with transparent pricing and top-quality workmanship.</p>
+      <p>Choose RT Electrical for peace of mind and service you can rely on.</p>
+    </div>
+    <div class="badges">
+      <span>✔ Fully Insured</span>
+      <span>✔ NICEIC Approved</span>
+      <span>✔ 24/7 Emergency Callouts</span>
+    </div>
+  </section>
+
+  <section class="testimonials animated-section">
+    <h2>What Our Clients Say</h2>
+    <div class="carousel">
+      <div class="testimonial active">
+        <p>"Quick, reliable, and professional! Highly recommend RT Electrical."</p>
+        <span>– Laura from Glasgow</span>
+      </div>
+      <div class="testimonial">
+        <p>"Great work rewiring our home. Explained everything clearly."</p>
+        <span>– David from Edinburgh</span>
+      </div>
+      <div class="testimonial">
+        <p>"Fantastic service on short notice. They really care about their clients."</p>
+        <span>– Sarah from Dundee</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq animated-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header">Do you offer emergency services?</button>
+        <div class="accordion-body">Yes! We offer 24/7 emergency callouts across Scotland.</div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Are you fully insured and certified?</button>
+        <div class="accordion-body">We are NICEIC approved and fully insured for domestic, commercial, and industrial work.</div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-header">Can I get a free quote?</button>
+        <div class="accordion-body">Absolutely. Contact us anytime to schedule a free, no-obligation quote.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-form animated-section">
+    <h2>Book a Free Quote</h2>
+    
+<form action="https://formspree.io/f/mnqekovp" method="POST" onsubmit="showPopup(event)">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <input type="tel" name="phone" placeholder="Your Phone Number" required />
+  <textarea name="message" placeholder="What do you need help with?" required></textarea>
+  <button type="submit" class="btn primary">Submit</button>
+</form>
+
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="tel" placeholder="Your Phone Number" required />
+      <textarea placeholder="What do you need help with?" required></textarea>
+      <button type="submit" class="btn primary">Submit</button>
+    </form>
+  
+<div id="thank-you-popup" class="thank-you-popup">
+  <div class="thank-you-content">
+    <h3>Thank you!</h3>
+    <p>Your message has been sent. We'll be in touch shortly.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+
   <script>
+    // Carousel
     let galleryIndex = 0;
     const images = document.querySelectorAll('.gallery-img');
     const totalImages = images.length;
@@ -84,108 +202,64 @@
       document.getElementById('lightbox').style.display = 'none';
     }
 
-    // Swipe support
-    const galleryTrack = document.getElementById('gallery-track');
-    let startX = 0;
-
-    galleryTrack.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
+    window.addEventListener('load', () => {
+      showGalleryImages();
+      setInterval(nextGallerySlide, 5000);
     });
 
-    galleryTrack.addEventListener('touchend', (e) => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) {
-        nextGallerySlide();
-      } else if (endX - startX > 50) {
-        prevGallerySlide();
-      }
-    });
-
-    window.addEventListener('load', showGalleryImages);
-    setInterval(nextGallerySlide, 5000);
-  </script>
-<section class="hero">
-    <div class="hero-text">
-      <h1>About RT Electrical</h1>
-      <p>At RT Electrical, we are committed to delivering safe, reliable, and professional electrical services across Scotland. With years of industry experience, our team of qualified electricians handles projects of all sizes—from minor domestic repairs to large-scale commercial installations.</p>
-      <p>Customer satisfaction and safety are at the core of everything we do. We are NICEIC approved, fully insured, and operate 24/7 to ensure we’re there when you need us most.</p>
-      <p>Our approach is built on trust, technical expertise, and an unwavering commitment to high standards. Whether you’re a homeowner, landlord, or business, we take the time to understand your needs and provide tailored solutions with transparent pricing and top-quality workmanship.</p>
-      <p>Choose RT Electrical for peace of mind and service you can rely on.</p>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="carousel" id="carousel">
-      <div class="testimonial active">
-        <p>"RT Electrical responded quickly and fixed our fuse board the same day. Professional, friendly, and efficient."</p>
-        <span>— Laura, Glasgow</span>
-      </div>
-      <div class="testimonial">
-        <p>"We use RT Electrical for all our landlord safety checks. Reliable service every time."</p>
-        <span>— Mark, Edinburgh</span>
-      </div>
-      <div class="testimonial">
-        <p>"Top-quality work on our office refit. The lighting and wiring setup is flawless."</p>
-        <span>— Sarah, Dundee</span>
-      </div>
-    </div>
-    <div class="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </section>
-
-  <section class="google-reviews">
-    <h2>Live Google Reviews</h2>
-    <p>See what real customers are saying about us on Google.</p>
-    <div class="google-reviews-widget">
-      <!-- Elfsight Google Reviews -->
-      <div class="elfsight-app-6b01a66c-4f0a-479d-a3f0-bfcd6e31fee8" data-elfsight-app-lazy></div>
-    </div>
-  </section>
-
-  <script>
+    // Testimonials
     let current = 0;
     const testimonials = document.querySelectorAll('.testimonial');
-    const dots = document.querySelectorAll('.dot');
-    const carousel = document.getElementById('carousel');
-
-    function showTestimonial(index) {
-      testimonials.forEach(t => t.classList.remove('active'));
-      dots.forEach(d => d.classList.remove('active'));
-      testimonials[index].classList.add('active');
-      dots[index].classList.add('active');
-    }
-
-    function nextTestimonial() {
+    setInterval(() => {
+      testimonials[current].classList.remove('active');
       current = (current + 1) % testimonials.length;
-      showTestimonial(current);
-    }
+      testimonials[current].classList.add('active');
+    }, 6000);
 
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        current = index;
-        showTestimonial(current);
+    // FAQ Accordion
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        body.style.display = (body.style.display === 'block') ? 'none' : 'block';
       });
     });
-
-    setInterval(nextTestimonial, 5000);
-
-    let startX = 0;
-    carousel.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    });
-    carousel.addEventListener('touchend', (e) => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) {
-        nextTestimonial();
-      } else if (endX - startX > 50) {
-        current = (current - 1 + testimonials.length) % testimonials.length;
-        showTestimonial(current);
+  
+<script>
+  const sections = document.querySelectorAll(".animated-section");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
       }
     });
-  </script>
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+
+function showPopup(e) {
+  e.preventDefault();
+  const form = e.target;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById("thank-you-popup").style.display = "flex";
+      form.reset();
+    }
+  });
+}
+
+function closePopup() {
+  document.getElementById("thank-you-popup").style.display = "none";
+}
+
+</script>
 </body>
 </html>
+
