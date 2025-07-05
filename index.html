@@ -1,264 +1,272 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>RT Electrical - Home</title>
-<link href="style.css" rel="stylesheet"/>
-<script async="" src="https://static.elfsight.com/platform/platform.js">
-function showPopup(e) {
-  e.preventDefault();
-  const form = e.target;
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    if (response.ok) {
-      document.getElementById("thank-you-popup").style.display = "flex";
-      form.reset();
-    }
-  });
-}
-
-function closePopup() {
-  document.getElementById("thank-you-popup").style.display = "none";
-}
-
-</script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>RT Electrical - Home</title>
+    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-<header class="topbar">
-<div class="logo">
-<img alt="RT Electrical Logo" src="images/logo.jpeg"/>
-<span>RT <strong>Electrical</strong></span>
-</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
-<div class="sticky-bar">
-<a href="tel:+447799531890">📞 Call</a>
-<a href="mailto:admin@rosstonnerelectrical.co.uk">✉️ Email</a>
-</div>
-<section class="contact-gallery">
-<h2>Get in Touch</h2>
-<div class="contact-buttons">
-<a class="btn call-btn" href="tel:+447799531890">📞 Call Us</a>
-<a class="btn email-btn" href="mailto:admin@rosstonnerelectrical.co.uk">✉️ Email Us</a>
-</div>
-<div class="gallery-carousel">
-<h2>Our Work</h2>
-<div class="gallery-nav">
-<button class="nav-btn" onclick="prevGallerySlide()">❮</button>
-<div class="gallery-track" id="gallery-track">
-<img alt="Gallery Image 1" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image1.jfif"/>
-<img alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image2.jfif"/>
-<img alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image3.jfif"/>
-<img alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image4.jfif"/>
-<img alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image5.jfif"/>
-<img alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image6.jfif"/>
-<img alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image7.jfif"/>
-</div>
-<button class="nav-btn" onclick="nextGallerySlide()">❯</button>
-</div>
-</div>
-</section>
-<div id="lightbox" onclick="closeLightbox()">
-<img alt="Full Image" id="lightbox-img" src="#"/>
-</div>
-<section class="hero text-center">
-<h2>Who We Are</h2>
-<div class="hero-text">
-<p>At RT Electrical, we are committed to delivering safe, reliable, and professional electrical services across Scotland. With years of industry experience, our team of qualified electricians handles projects of all sizes—from minor domestic repairs to large-scale commercial installations.</p>
-<p>Customer satisfaction and safety are at the core of everything we do. We are NICEIC approved, fully insured, and operate 24/7 to ensure we’re there when you need us most.</p>
-<p>Our approach is built on trust, technical expertise, and an unwavering commitment to high standards. Whether you’re a homeowner, landlord, or business, we take the time to understand your needs and provide tailored solutions with transparent pricing and top-quality workmanship.</p>
-<p>Choose RT Electrical for peace of mind and service you can rely on.</p>
-</div>
-<div class="badges">
-<span>✔ Fully Insured</span>
-<span>✔ NICEIC Approved</span>
-<span>✔ 24/7 Emergency Callouts</span>
-</div>
-</section>
-<section class="booking-form animated-section">
-<h2>Book a Free Quote</h2>
+    <header class="topbar">
+        <div class="logo">
+            <img alt="RT Electrical Logo" src="images/logo.jpeg"/>
+            <span>RT <strong>Electrical</strong></span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-<div class="card"><form action="https://formspree.io/f/mgeqqyrr" method="POST" onsubmit="showPopup(event)">
-<input name="name" placeholder="Your Name" required="" type="text"/>
-<input name="email" placeholder="Your Email" required="" type="email"/>
-<input name="phone" placeholder="Your Phone Number" required="" type="tel"/>
-<textarea name="message" placeholder="What do you need help with?" required=""></textarea>
-<button class="btn primary" type="submit">Submit</button>
-</form></div></section>
-<section class="gallery-carousel animated-section">
-<h2>Our Work</h2>
-<div class="gallery-nav">
-<button class="nav-btn" onclick="prevGallerySlide()">❮</button>
-<div class="gallery-track" id="gallery-track">
-<img alt="Gallery Image 1" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image1.jfif"/>
-<img alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image2.jfif"/>
-<img alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image3.jfif"/>
-<img alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image4.jfif"/>
-<img alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image5.jfif"/>
-<img alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image6.jfif"/>
-<img alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image7.jfif"/>
-</div>
-<button class="nav-btn" onclick="nextGallerySlide()">❯</button>
-</div>
-</section>
-<section class="testimonials animated-section">
-<h2>What Our Clients Say</h2>
+    <div class="sticky-bar">
+        <a href="tel:+447799531890">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            Call
+        </a>
+        <a href="mailto:admin@rosstonnerelectrical.co.uk">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Email
+        </a>
+    </div>
 
-<div class="card"><div class="carousel">
-<div class="testimonial active">
-<p>"Quick, reliable, and professional! Highly recommend RT Electrical."</p>
-<span>– Laura from Glasgow</span>
-</div>
-<div class="testimonial">
-<p>"Great work rewiring our home. Explained everything clearly."</p>
-<span>– David from Glasgow</span>
-</div>
-<div class="testimonial">
-<p>"Fantastic service on short notice."</p>
-<span>– Sarah from Paisley</span>
-</div>
-</div></div></section>
-<section class="faq animated-section">
-<h2>Frequently Asked Questions</h2>
+    <main>
+        <section class="contact-gallery get-in-touch-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-buttons">
+                <a class="btn call-btn" href="tel:+447799531890">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    Call Us
+                </a>
+                <a class="btn email-btn" href="mailto:admin@rosstonnerelectrical.co.uk">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px; vertical-align: middle;">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    Email Us
+                </a>
+            </div>
+        </section>
 
-<div class="card"><div class="accordion">
-<div class="accordion-item">
-<button class="accordion-header">Do you offer emergency services?</button>
-<div class="accordion-body">Yes! We offer 24/7 emergency callouts across Scotland.</div>
-</div>
-<div class="accordion-item">
-<button class="accordion-header">Are you fully insured and certified?</button>
-<div class="accordion-body">We are NICEIC approved and fully insured for domestic, commercial and industrial work.</div>
-</div>
-<div class="accordion-item">
-<button class="accordion-header">Can I get a free quote?</button>
-<div class="accordion-body">Absolutely. Contact us anytime to schedule a free, no-obligation quote.</div>
-</div>
-</div></div></section>
-<section class="booking-form animated-section">
-<h2>Book a Free Quote</h2>
-<form action="https://formspree.io/f/mnqekovp" method="POST" onsubmit="showPopup(event)">
-<input name="name" placeholder="Your Name" required="" type="text"/>
-<input name="email" placeholder="Your Email" required="" type="email"/>
-<input name="phone" placeholder="Your Phone Number" required="" type="tel"/>
-<textarea name="message" placeholder="What do you need help with?" required=""></textarea>
-<button class="btn primary" type="submit">Submit</button>
-</form>
-<input placeholder="Your Name" required="" type="text"/>
-<input placeholder="Your Email" required="" type="email"/>
-<input placeholder="Your Phone Number" required="" type="tel"/>
-<textarea placeholder="What do you need help with?" required=""></textarea>
-<button class="btn primary" type="submit">Submit</button>
+        <section class="our-work-section">
+            <div class="gallery-carousel">
+                <h2>Our Work</h2>
+                <div class="gallery-nav">
+                    <button class="nav-btn" onclick="prevGallerySlide()">❮</button>
+                    <div class="gallery-track" id="gallery-track">
+                        <img alt="Gallery Image 1" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image1.jfif"/>
+                        <img alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image2.jfif"/>
+                        <img alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image3.jfif"/>
+                        <img alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image4.jfif"/>
+                        <img alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image5.jfif"/>
+                        <img alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image6.jfif"/>
+                        <img alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image7.jfif"/>
+                    </div>
+                    <button class="nav-btn" onclick="nextGallerySlide()">❯</button>
+                </div>
+            </div>
+        </section>
 
-<div class="thank-you-popup" id="thank-you-popup">
-<div class="thank-you-content">
-<h3>Thank you!</h3>
-<p>Your message has been sent. We'll be in touch shortly.</p>
-<button onclick="closePopup()">Close</button>
-</div>
-</div>
-<script>
-    // Carousel
-    let galleryIndex = 0;
-    const images = document.querySelectorAll('.gallery-img');
-    const totalImages = images.length;
-    const visibleImages = 4;
+        <div id="lightbox" onclick="closeLightbox()">
+            <img alt="Full Image" id="lightbox-img" src="#"/>
+        </div>
 
-    function showGalleryImages() {
-      images.forEach((img, idx) => {
-        img.style.display = (idx >= galleryIndex && idx < galleryIndex + visibleImages) ? 'inline-block' : 'none';
-      });
-    }
+        <section class="hero text-center">
+            <h2>Who We Are</h2>
+            <div class="hero-text">
+                <p>At RT Electrical, we are committed to delivering safe, reliable, and professional electrical services across Scotland. With years of industry experience, our team of qualified electricians handles projects of all sizes—from minor domestic repairs to large-scale commercial installations.</p>
+                <p>Customer satisfaction and safety are at the core of everything we do. We are NICEIC approved, fully insured, and operate 24/7 to ensure we're there when you need us most.</p>
+                <p>Our approach is built on trust, technical expertise, and an unwavering commitment to high standards. Whether you're a homeowner, landlord, or business, we take the time to understand your needs and provide tailored solutions with transparent pricing and top-quality workmanship.</p>
+                <p>Choose RT Electrical for peace of mind and service you can rely on.</p>
+            </div>
+            <div class="badges">
+                <span>✔ Fully Insured</span>
+                <span>✔ NICEIC Approved</span>
+                <span>✔ 24/7 Emergency Callouts</span>
+            </div>
+        </section>
 
-    function nextGallerySlide() {
-      galleryIndex = (galleryIndex + visibleImages) % totalImages;
-      showGalleryImages();
-    }
+        <section class="booking-form animated-section">
+            <h2>Book a Free Quote</h2>
+            <div class="card">
+                <form action="https://formspree.io/f/mgeqqyrr" method="POST" onsubmit="showPopup(event)">
+                    <input name="name" placeholder="Your Name" required type="text"/>
+                    <input name="email" placeholder="Your Email" required type="email"/>
+                    <input name="phone" placeholder="Your Phone Number" required type="tel"/>
+                    <textarea name="message" placeholder="What do you need help with?" required></textarea>
+                    <button class="btn primary" type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
 
-    function prevGallerySlide() {
-      galleryIndex = (galleryIndex - visibleImages + totalImages) % totalImages;
-      showGalleryImages();
-    }
+        <section class="testimonials animated-section">
+            <h2>What Our Clients Say</h2>
+            <div class="card">
+                <div class="carousel">
+                    <div class="testimonial active">
+                        <p>"Quick, reliable, and professional! Highly recommend RT Electrical."</p>
+                        <span>– Laura from Glasgow</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Great work rewiring our home. Explained everything clearly."</p>
+                        <span>– David from Glasgow</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Fantastic service on short notice."</p>
+                        <span>– Sarah from Paisley</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    function openLightbox(src) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
-    }
+        <section class="faq animated-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="card">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">Do you offer emergency services?</button>
+                        <div class="accordion-body">Yes! We offer 24/7 emergency callouts across Scotland.</div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Are you fully insured and certified?</button>
+                        <div class="accordion-body">We are NICEIC approved and fully insured for domestic, commercial and industrial work.</div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">Can I get a free quote?</button>
+                        <div class="accordion-body">Absolutely. Contact us anytime to schedule a free, no-obligation quote.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-    }
+    <div class="thank-you-popup" id="thank-you-popup">
+        <div class="thank-you-content">
+            <h3>Thank you!</h3>
+            <p>Your message has been sent. We'll be in touch shortly.</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
 
-    window.addEventListener('load', () => {
-      showGalleryImages();
-      setInterval(nextGallerySlide, 5000);
-    });
+    <script>
+        // Gallery Carousel
+        let galleryIndex = 0;
+        const images = document.querySelectorAll('.gallery-img');
+        const totalImages = images.length;
+        const visibleImages = 4;
 
-    // Testimonials
-    let current = 0;
-    const testimonials = document.querySelectorAll('.testimonial');
-    setInterval(() => {
-      testimonials[current].classList.remove('active');
-      current = (current + 1) % testimonials.length;
-      testimonials[current].classList.add('active');
-    }, 6000);
+        function showGalleryImages() {
+            images.forEach((img, idx) => {
+                img.style.display = (idx >= galleryIndex && idx < galleryIndex + visibleImages) ? 'inline-block' : 'none';
+            });
+        }
 
-    // FAQ Accordion
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const body = header.nextElementSibling;
-        body.style.display = (body.style.display === 'block') ? 'none' : 'block';
-      });
-    });
-  
-<script>
-  const sections = document.querySelectorAll(".animated-section");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-      }
-    });
-  }, { threshold: 0.1 });
+        function nextGallerySlide() {
+            galleryIndex = (galleryIndex + visibleImages) % totalImages;
+            showGalleryImages();
+        }
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
+        function prevGallerySlide() {
+            galleryIndex = (galleryIndex - visibleImages + totalImages) % totalImages;
+            showGalleryImages();
+        }
 
-function showPopup(e) {
-  e.preventDefault();
-  const form = e.target;
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    if (response.ok) {
-      document.getElementById("thank-you-popup").style.display = "flex";
-      form.reset();
-    }
-  });
-}
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
 
-function closePopup() {
-  document.getElementById("thank-you-popup").style.display = "none";
-}
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
 
-</script>
-</section></body>
+        // Testimonials Carousel
+        let current = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        
+        function rotateTestimonials() {
+            testimonials[current].classList.remove('active');
+            current = (current + 1) % testimonials.length;
+            testimonials[current].classList.add('active');
+        }
+
+        // FAQ Accordion
+        function initAccordion() {
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const body = header.nextElementSibling;
+                    const isOpen = body.style.display === 'block';
+                    
+                    // Close all accordion items
+                    document.querySelectorAll('.accordion-body').forEach(item => {
+                        item.style.display = 'none';
+                    });
+                    
+                    // Toggle current item
+                    body.style.display = isOpen ? 'none' : 'block';
+                });
+            });
+        }
+
+        // Form Submission
+        function showPopup(e) {
+            e.preventDefault();
+            const form = e.target;
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("thank-you-popup").style.display = "flex";
+                    form.reset();
+                } else {
+                    alert('There was an error sending your message. Please try again.');
+                }
+            }).catch(error => {
+                alert('There was an error sending your message. Please try again.');
+            });
+        }
+
+        function closePopup() {
+            document.getElementById("thank-you-popup").style.display = "none";
+        }
+
+        // Scroll Animation
+        function initScrollAnimation() {
+            const sections = document.querySelectorAll(".animated-section");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Initialize everything when page loads
+        window.addEventListener('load', () => {
+            showGalleryImages();
+            initAccordion();
+            initScrollAnimation();
+            
+            // Start automatic slideshow
+            setInterval(nextGallerySlide, 5000);
+            setInterval(rotateTestimonials, 6000);
+        });
+    </script>
+</body>
 </html>
