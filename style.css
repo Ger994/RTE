@@ -318,3 +318,17 @@ section:nth-of-type(odd) {
 section:nth-of-type(even) {
   background: linear-gradient(145deg, #1c1c1c 0%, #2a2a2a 100%);
 }
+
+
+.animated-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  visibility: hidden;
+}
+
+.animated-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
