@@ -93,41 +93,73 @@ nav a:hover {
     font-weight: 500;
 }
 
-/* Sticky Bar - Hidden on mobile */
-.sticky-bar {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #dc143c 0%, #b22222 100%);
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    z-index: 999;
+/* Google Reviews Section */
+.google-reviews {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-@media (max-width: 768px) {
-    .sticky-bar {
-        display: none;
-    }
+.reviews-container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.sticky-bar a {
-    color: #fff;
+.google-reviews h2 {
+    margin-bottom: 2rem;
+}
+
+.reviews-widget {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1e1e1e 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reviews-placeholder {
+    border: 2px dashed rgba(220, 20, 60, 0.3);
+    padding: 3rem;
+    text-align: center;
+}
+
+.reviews-placeholder h3 {
+    color: #dc143c;
+    margin-bottom: 1rem;
+}
+
+.reviews-placeholder p {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.reviews-placeholder code {
+    background: rgba(220, 20, 60, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.google-button {
+    background: #4285f4;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
+    margin-top: 1rem;
+    transition: background 0.3s;
 }
 
-.sticky-bar a:hover {
-    background: rgba(255, 255, 255, 0.2);
+.google-button:hover {
+    background: #3367d6;
 }
+
+/* Remove sticky bar completely */
 
 /* Main Content */
 main {
@@ -246,24 +278,32 @@ p {
 }
 
 .gallery-track {
-    display: flex;
-    gap: 1rem;
-    overflow: hidden;
-    max-width: 800px;
+    position: relative;
+    width: 300px;
+    height: 300px;
     margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 .gallery-img {
-    width: 150px;
-    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
     cursor: pointer;
-    transition: transform 0.3s;
+}
+
+.gallery-img.active {
+    opacity: 1;
 }
 
 .gallery-img:hover {
-    transform: scale(1.05);
+    transform: none;
 }
 
 .nav-btn {
@@ -279,6 +319,27 @@ p {
 
 .nav-btn:hover {
     background: rgba(255, 255, 255, 0.3);
+}
+
+/* Gallery indicators */
+.gallery-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: #dc143c;
 }
 
 /* Lightbox */
@@ -350,28 +411,174 @@ p {
     gap: 1rem;
 }
 
-input, textarea {
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+input, textarea, select {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
     padding: 15px;
     border-radius: 8px;
     font-size: 1rem;
+    font-family: inherit;
 }
 
 input::placeholder, textarea::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: #dc143c;
     box-shadow: 0 0 0 2px rgba(220, 20, 60, 0.2);
 }
 
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: #2c2c2c;
+    color: #fff;
+}
+
 textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+/* File Upload Styling */
+.file-upload {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.file-upload-label:hover {
+    border-color: #dc143c;
+    background: rgba(220, 20, 60, 0.1);
+}
+
+.file-upload-label.has-file {
+    border-color: #dc143c;
+    background: rgba(220, 20, 60, 0.2);
+}
+
+.file-upload-text {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.file-upload-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+}
+
+.file-info {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #dc143c;
+}
+
+.file-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.file-item {
+    background: rgba(220, 20, 60, 0.2);
+    border: 1px solid #dc143c;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.file-remove {
+    background: none;
+    border: none;
+    color: #dc143c;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0;
+    margin-left: 0.5rem;
+}
+
+.file-remove:hover {
+    color: #fff;
+}
+
+/* Priority/Urgency Indicators */
+.priority-high {
+    background: rgba(220, 20, 60, 0.1) !important;
+    border-color: #dc143c !important;
+}
+
+.priority-medium {
+    background: rgba(255, 165, 0, 0.1) !important;
+    border-color: orange !important;
+}
+
+.priority-low {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border-color: #22c55e !important;
+}
+
+/* Mobile Form Adjustments */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .file-upload-label {
+        padding: 15px;
+    }
 }
 
 /* Testimonials */
@@ -546,8 +753,17 @@ textarea {
         gap: 1rem;
     }
 
+    .gallery-track {
+        width: 280px;
+        height: 280px;
+    }
+
     .nav-btn {
-        display: none;
+        display: block;
+    }
+
+    .gallery-indicators {
+        margin-top: 1rem;
     }
 
     section {
