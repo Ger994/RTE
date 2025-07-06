@@ -834,7 +834,7 @@ input[type="checkbox"] {
     transform: translateY(0);
 }
 
-/* Responsive Design */
+/* Mobile responsive */
 @media (max-width: 768px) {
     .topbar {
         padding: 1rem;
@@ -910,5 +910,34 @@ input[type="checkbox"] {
 
     .our-work-section {
         padding: 40px 15px;
+    }
+
+    .google-reviews {
+        padding: 40px 15px;
+    }
+    
+    .floating-quote-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .floating-quote-btn .quote-text {
+        font-size: 0.85rem;
+    }
+    
+    .quote-popup-content {
+        padding: 2rem;
+        margin: 20px;
+    }
+    
+    .quote-popup-buttons {
+        flex-direction: column;
+    }
+    
+    .quote-popup-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
