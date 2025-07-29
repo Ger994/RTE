@@ -1,24 +1,800 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Placeholder</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Electrical Services Renfrewshire | RT Electrical - NICEIC Approved Electricians</title>
+    <meta name="description" content="Professional electrical services across Renfrewshire, Scotland. NICEIC approved electricians offering domestic, commercial & emergency electrical work. Call 07799 531890 for free quotes."/>
+    <meta name="keywords" content="electrician Renfrewshire, electrical services Scotland, NICEIC electrician Paisley, domestic electrician Johnstone, commercial electrician Renfrew, emergency electrician Barrhead"/>
+    <link href="style.css" rel="stylesheet"/>
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "RT Electrical",
+        "image": "https://rtelectrical.com/images/logo.jpeg",
+        "telephone": "07799531890",
+        "email": "alexanderjmccurdy@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Renfrewshire",
+            "addressCountry": "Scotland"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "55.8456",
+            "longitude": "-4.4239"
+        },
+        "url": "https://rtelectrical.com",
+        "priceRange": "££",
+        "openingHours": "Mo-Su 00:00-23:59",
+        "serviceArea": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "55.8456",
+                "longitude": "-4.4239"
+            },
+            "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Electrical Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Domestic Electrical Services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Commercial Electrical Services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Emergency Electrical Services"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="RT Electrical Logo" />
-      <span>RT <strong>Electrical</strong></span>
-    </div>
-  </header>
-  <section class="hero">
-    <div class="hero-text">
-      <h1>This page is under construction</h1>
-      <p>Check back soon for updates.</p>
-    </div>
-  </section>
+    <header class="topbar">
+        <div class="logo">
+            <img alt="RT Electrical Logo" src="images/logo.jpeg"/>
+            <span>RT <strong>Electrical</strong></span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html" class="active">Services</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="services-hero">
+            <div class="hero-content">
+                <h1>Professional Electrical Services in Renfrewshire</h1>
+                <p>NICEIC approved electricians serving Paisley, Johnstone, Renfrew, Barrhead and surrounding areas. Available 24/7 for emergency callouts across Scotland.</p>
+                <div class="hero-buttons">
+                    <a href="tel:+447799531890" class="btn primary">Call Now: 07799 531890</a>
+                    <a href="#quote-form" class="btn secondary">Get Free Quote</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Areas -->
+        <section class="service-areas">
+            <div class="container">
+                <h2>Areas We Cover in Renfrewshire</h2>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <h3>Paisley Electricians</h3>
+                        <p>Professional electrical services in Paisley including emergency callouts, rewiring, and EICR testing.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Johnstone Electrical</h3>
+                        <p>Domestic and commercial electrical work in Johnstone. From socket installations to full rewires.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Renfrew Electricians</h3>
+                        <p>Qualified electricians in Renfrew offering consumer unit upgrades, lighting, and electrical testing.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Barrhead Electrical</h3>
+                        <p>Complete electrical services in Barrhead including EV charger installation and smart home systems.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Elderslie & Bridge of Weir</h3>
+                        <p>Serving surrounding villages with reliable electrical repairs, installations, and emergency services.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Linwood & Houston</h3>
+                        <p>Professional electrical work across all Renfrewshire towns with same-day emergency response.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Services -->
+        <section class="main-services">
+            <div class="container">
+                <h2>Our Electrical Services</h2>
+                
+                <!-- Domestic Services -->
+                <div class="service-category">
+                    <h3>Domestic Electrical Services in Renfrewshire</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🏠</div>
+                            <h4>House Rewiring</h4>
+                            <p>Complete and partial rewiring services for homes in Paisley, Johnstone, and across Renfrewshire. We work with all property types from Victorian terraces to modern builds.</p>
+                            <ul>
+                                <li>Full house rewiring</li>
+                                <li>Partial rewiring</li>
+                                <li>Period property specialists</li>
+                                <li>Minimal disruption methods</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">⚡</div>
+                            <h4>Consumer Unit Upgrades</h4>
+                            <p>Modern consumer unit installation in Renfrewshire homes. Upgrade your old fuse box to meet current safety standards with RCD protection.</p>
+                            <ul>
+                                <li>18th Edition compliant</li>
+                                <li>RCD and RCBO protection</li>
+                                <li>Same-day installation</li>
+                                <li>Full certification provided</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🔌</div>
+                            <h4>Additional Sockets & Switches</h4>
+                            <p>Extra socket installation and light switch upgrades throughout Renfrewshire. USB sockets, outdoor sockets, and smart switches available.</p>
+                            <ul>
+                                <li>Internal & external sockets</li>
+                                <li>USB charging points</li>
+                                <li>Dimmer switches</li>
+                                <li>Smart home controls</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">💡</div>
+                            <h4>Lighting Installation</h4>
+                            <p>Professional lighting solutions for homes across Paisley and Renfrewshire. From LED downlights to outdoor security lighting.</p>
+                            <ul>
+                                <li>LED downlight installation</li>
+                                <li>Pendant and chandelier fitting</li>
+                                <li>Outdoor & security lighting</li>
+                                <li>Smart lighting systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🚗</div>
+                            <h4>EV Charger Installation</h4>
+                            <p>Electric vehicle charging point installation across Renfrewshire. OZEV approved installers with government grant applications.</p>
+                            <ul>
+                                <li>Home EV charger installation</li>
+                                <li>Government grant applications</li>
+                                <li>All major charger brands</li>
+                                <li>Load balancing systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🚿</div>
+                            <h4>Electric Shower Installation</h4>
+                            <p>Electric shower installation and repairs in Renfrewshire. Power shower installations with dedicated circuits and RCD protection.</p>
+                            <ul>
+                                <li>New shower installations</li>
+                                <li>Shower repairs & maintenance</li>
+                                <li>Dedicated shower circuits</li>
+                                <li>All leading brands fitted</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commercial Services -->
+                <div class="service-category">
+                    <h3>Commercial Electrical Services</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">🏢</div>
+                            <h4>Office Electrical Work</h4>
+                            <p>Complete electrical services for offices in Paisley, Renfrew, and throughout Renfrewshire. Data cabling, emergency lighting, and power distribution.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🏪</div>
+                            <h4>Retail Electrical</h4>
+                            <p>Electrical installations for shops and retail premises across Renfrewshire. Display lighting, till points, and security systems.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🏭</div>
+                            <h4>Industrial Electrical</h4>
+                            <p>Industrial electrical services in Renfrewshire including three-phase installations, motor controls, and machinery connections.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testing & Certification -->
+                <div class="service-category">
+                    <h3>Electrical Testing & Certification</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">📋</div>
+                            <h4>EICR Testing Renfrewshire</h4>
+                            <p>Electrical Installation Condition Reports (EICR) for landlords and homeowners across Renfrewshire. Legal compliance testing and certification.</p>
+                            <ul>
+                                <li>Landlord EICR certificates</li>
+                                <li>Homebuyer electrical surveys</li>
+                                <li>Commercial EICR testing</li>
+                                <li>Remedial work included</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">🔍</div>
+                            <h4>PAT Testing</h4>
+                            <p>Portable Appliance Testing for businesses in Paisley and Renfrewshire. Annual PAT testing with full documentation and labeling.</p>
+                            <ul>
+                                <li>Annual PAT testing schedules</li>
+                                <li>Certificate and labeling</li>
+                                <li>Failed appliance reports</li>
+                                <li>Competitive commercial rates</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">⚠️</div>
+                            <h4>Fault Finding</h4>
+                            <p>Expert electrical fault finding across Renfrewshire. We quickly identify and resolve electrical problems in homes and businesses.</p>
+                            <ul>
+                                <li>RCD tripping issues</li>
+                                <li>Power failures</li>
+                                <li>Lighting problems</li>
+                                <li>Safety defects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Services -->
+                <div class="service-category emergency-services">
+                    <h3>24/7 Emergency Electrical Services</h3>
+                    <div class="emergency-content">
+                        <div class="emergency-info">
+                            <h4>Emergency Electrician Renfrewshire</h4>
+                            <p>Electrical emergencies don't wait for convenient times. Our emergency electricians are available 24/7 across Renfrewshire for urgent electrical problems.</p>
+                            
+                            <div class="emergency-situations">
+                                <h5>We attend emergencies including:</h5>
+                                <ul>
+                                    <li>Power failures and outages</li>
+                                    <li>Electrical fires or burning smells</li>
+                                    <li>Electric shock incidents</li>
+                                    <li>RCD constantly tripping</li>
+                                    <li>Dangerous electrical faults</li>
+                                    <li>Storm damage repairs</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="emergency-response">
+                                <h5>Emergency Response Times:</h5>
+                                <ul>
+                                    <li><strong>Paisley:</strong> 30-60 minutes</li>
+                                    <li><strong>Johnstone:</strong> 30-60 minutes</li>
+                                    <li><strong>Renfrew:</strong> 30-60 minutes</li>
+                                    <li><strong>Wider Renfrewshire:</strong> 1-2 hours</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="emergency-call">
+                            <div class="emergency-card">
+                                <h4>Electrical Emergency?</h4>
+                                <p>Don't wait - call now for immediate assistance</p>
+                                <a href="tel:+447799531890" class="btn emergency">Emergency Call: 07799 531890</a>
+                                <p class="emergency-note">Available 24/7 including weekends and holidays</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose-us">
+            <div class="container">
+                <h2>Why Choose RT Electrical in Renfrewshire?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">✅</div>
+                        <h4>NICEIC Approved</h4>
+                        <p>Fully qualified and NICEIC approved electricians ensuring all work meets industry standards and building regulations.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <h4>Fully Insured</h4>
+                        <p>Comprehensive public liability insurance covering all domestic, commercial, and industrial electrical work.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📞</div>
+                        <h4>24/7 Emergency</h4>
+                        <p>Round-the-clock emergency electrical services across Renfrewshire with fast response times.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💰</div>
+                        <h4>Free Quotes</h4>
+                        <p>No-obligation free quotes for all electrical work with transparent, competitive pricing.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📱</div>
+                        <h4>Local Experts</h4>
+                        <p>Based in Renfrewshire with extensive knowledge of local properties and electrical requirements.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⭐</div>
+                        <h4>5-Star Reviews</h4>
+                        <p>Consistently high ratings from satisfied customers across Paisley, Johnstone, and Renfrewshire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Form -->
+        <section class="quote-section" id="quote-form">
+            <div class="container">
+                <h2>Get Your Free Electrical Quote</h2>
+                <p>Contact RT Electrical for professional electrical services across Renfrewshire. Free quotes, competitive prices, guaranteed work.</p>
+                
+                <div class="contact-options">
+                    <div class="contact-method">
+                        <h4>Call for Immediate Service</h4>
+                        <a href="tel:+447799531890" class="btn primary large">📞 07799 531890</a>
+                        <p>Speak directly with our electricians</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h4>Email for Quotes</h4>
+                        <a href="mailto:alexanderjmccurdy@gmail.com" class="btn secondary large">📧 Email Us</a>
+                        <p>Send details for a written quote</p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <h4>Online Quote Form</h4>
+                        <a href="index.html#booking-form" class="btn tertiary large">📋 Online Form</a>
+                        <p>Fill out our detailed quote request</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Area Map -->
+        <section class="service-area-details">
+            <div class="container">
+                <h2>Electrical Services Coverage Area</h2>
+                <div class="area-content">
+                    <div class="main-areas">
+                        <h3>Primary Service Areas</h3>
+                        <div class="area-list">
+                            <div class="area-group">
+                                <h4>Paisley Electrical Services</h4>
+                                <p>Complete electrical services in Paisley including Ferguslie, Foxbar, Glenburn, Hunterhill, and town center. Emergency electricians available 24/7.</p>
+                            </div>
+                            <div class="area-group">
+                                <h4>Johnstone Electricians</h4>
+                                <p>Domestic and commercial electrical work in Johnstone, Milliken Park, and surrounding areas. NICEIC approved local electricians.</p>
+                            </div>
+                            <div class="area-group">
+                                <h4>Renfrew Electrical</h4>
+                                <p>Professional electrical services in Renfrew including Victory Gardens, Kings Inch, and Braehead areas.</p>
+                            </div>
+                            <div class="area-group">
+                                <h4>Barrhead & Neilston</h4>
+                                <p>Qualified electricians serving Barrhead, Neilston, and East Renfrewshire border areas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="extended-areas">
+                        <h3>Extended Coverage</h3>
+                        <p>We also provide electrical services to:</p>
+                        <div class="towns-list">
+                            <span>Bridge of Weir</span>
+                            <span>Elderslie</span>
+                            <span>Linwood</span>
+                            <span>Houston</span>
+                            <span>Brookfield</span>
+                            <span>Crosslee</span>
+                            <span>Kilbarchan</span>
+                            <span>Howwood</span>
+                            <span>Lochwinnoch</span>
+                            <span>Bishopton</span>
+                        </div>
+                        <p class="coverage-note">
+                            <strong>Emergency callouts available across all of Scotland</strong> - while we're based in Renfrewshire, our emergency electricians travel throughout Scotland for urgent electrical problems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>How quickly can you respond to electrical emergencies in Renfrewshire?</h4>
+                        <p>We aim to reach Paisley, Johnstone, and Renfrew within 30-60 minutes for genuine electrical emergencies. Other Renfrewshire areas typically within 1-2 hours.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do you provide electrical certificates and warranties?</h4>
+                        <p>Yes, all electrical work comes with appropriate certificates (Minor Works, EICR, EIC) and our workmanship warranty. We're NICEIC approved for your peace of mind.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What areas of Renfrewshire do you cover?</h4>
+                        <p>We cover all of Renfrewshire including Paisley, Johnstone, Renfrew, Barrhead, Bridge of Weir, Elderslie, Linwood, Houston, and surrounding villages.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How much do electrical services cost in Renfrewshire?</h4>
+                        <p>Costs vary by job complexity. We provide free, no-obligation quotes for all work. Emergency callouts start from £80 + materials and any additional work required.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Are you qualified to work on commercial properties?</h4>
+                        <p>Yes, we're fully qualified for commercial, industrial, and domestic electrical work. We handle everything from small offices to large industrial installations.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do you offer landlord electrical certificates (EICR)?</h4>
+                        <p>Absolutely. We provide EICR testing and certification for landlords across Renfrewshire, ensuring compliance with current regulations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.service-card, .feature, .area-card, .faq-item');
+            elementsToAnimate.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Additional CSS for services page -->
+    <style>
+        /* Services page specific styles */
+        .services-hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .services-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #dc143c;
+        }
+        
+        .services-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .areas-grid, .services-grid, .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .area-card, .service-card, .feature {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid #444;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .area-card:hover, .service-card:hover, .feature:hover {
+            transform: translateY(-5px);
+            border-color: #dc143c;
+        }
+        
+        .service-icon, .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .service-card h4, .feature h4 {
+            color: #dc143c;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        
+        .service-card ul li {
+            padding: 0.25rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .service-card ul li:before {
+            content: "✓";
+            color: #dc143c;
+            position: absolute;
+            left: 0;
+        }
+        
+        .service-category {
+            margin: 4rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid #444;
+        }
+        
+        .service-category h3 {
+            color: #dc143c;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .emergency-services {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 3rem;
+            border: 2px solid #dc143c;
+        }
+        
+        .emergency-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .emergency-card {
+            background: #dc143c;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .emergency-card h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn.primary {
+            background: #dc143c;
+            color: white;
+        }
+        
+        .btn.secondary {
+            background: transparent;
+            color: #dc143c;
+            border: 2px solid #dc143c;
+        }
+        
+        .btn.tertiary {
+            background: #333;
+            color: white;
+            border: 1px solid #666;
+        }
+        
+        .btn.emergency {
+            background: white;
+            color: #dc143c;
+            font-size: 1.1rem;
+            padding: 1.5rem 2rem;
+        }
+        
+        .btn.large {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+        }
+        
+        .contact-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-method {
+            text-align: center;
+            padding: 2rem;
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        
+        .towns-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .towns-list span {
+            background: #333;
+            color: #dc143c;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .faq-item {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #dc143c;
+        }
+        
+        .faq-item h4 {
+            color: #dc143c;
+            margin-bottom: 1rem;
+        }
+        
+        .coverage-note {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #dc143c;
+            margin-top: 2rem;
+        }
+        
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card, .feature, .area-card, .faq-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .emergency-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .areas-grid, .services-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+        
+        /* Navigation active state */
+        nav a.active {
+            background: #dc143c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+    </style>
 </body>
 </html>
