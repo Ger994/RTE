@@ -116,7 +116,7 @@
                     </div>
                     
                     <div class="contact-method">
-                        <h4>Email fir Quotes</h4>
+                        <h4>Email for Quotes</h4>
                         <a href="mailto:alexanderjmccurdy@gmail.com" class="btn primary large">Email Us</a>
                         <p>Send details for a written quote</p>
                     </div>
@@ -134,7 +134,7 @@
                         <div class="area-list">
                             <div class="area-group">
                                 <h4>Paisley Electrical Services</h4>
-                                <p>Complete electrical services in Paisley including Ferguslie, Foxbar, Glenburn, Hunterhill, and town center. Emergency electricians available 24/7.</p>
+                                <p>Complete electrical services in Paisley including Ferguslie, Foxbar, Glenburn, Hunterhill, and town center. Emergency electricians available.</p>
                             </div>
                             <div class="area-group">
                                 <h4>Johnstone Electricians</h4>
@@ -288,95 +288,6 @@
             padding: 2rem;
         }
         
-        .areas-grid, .services-grid, .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .area-card, .service-card, .feature {
-            background: #2a2a2a;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid #444;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        
-        .area-card:hover, .service-card:hover, .feature:hover {
-            transform: translateY(-5px);
-            border-color: #dc143c;
-        }
-        
-        .service-icon, .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-        
-        .service-card h4, .feature h4 {
-            color: #dc143c;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 1rem;
-        }
-        
-        .service-card ul li {
-            padding: 0.25rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .service-card ul li:before {
-            content: "✓";
-            color: #dc143c;
-            position: absolute;
-            left: 0;
-        }
-        
-        .service-category {
-            margin: 4rem 0;
-            padding: 2rem 0;
-            border-top: 1px solid #444;
-        }
-        
-        .service-category h3 {
-            color: #dc143c;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .emergency-services {
-            background: #1a1a1a;
-            border-radius: 15px;
-            padding: 3rem;
-            border: 2px solid #dc143c;
-        }
-        
-        .emergency-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-        
-        .emergency-card {
-            background: #dc143c;
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .emergency-card h4 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-        
         .btn {
             display: inline-block;
             padding: 1rem 2rem;
@@ -392,25 +303,6 @@
         .btn.primary {
             background: #dc143c;
             color: white;
-        }
-        
-        .btn.secondary {
-            background: transparent;
-            color: #dc143c;
-            border: 2px solid #dc143c;
-        }
-        
-        .btn.tertiary {
-            background: #333;
-            color: white;
-            border: 1px solid #666;
-        }
-        
-        .btn.emergency {
-            background: white;
-            color: #dc143c;
-            font-size: 1.1rem;
-            padding: 1.5rem 2rem;
         }
         
         .btn.large {
@@ -437,6 +329,51 @@
             border-radius: 10px;
         }
         
+        .contact-method h4 {
+            color: #dc143c;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-method p {
+            color: #e0e0e0;
+        }
+        
+        /* Service Area Styles */
+        .service-area-details {
+            background: #0f0f0f;
+            padding: 4rem 0;
+        }
+        
+        .service-area-details h2 {
+            color: #dc143c;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .service-area-details h3 {
+            color: #dc143c;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        
+        .area-group {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #2a2a2a;
+            border-radius: 10px;
+            border-left: 4px solid #dc143c;
+        }
+        
+        .area-group h4 {
+            color: #dc143c;
+            margin-bottom: 0.5rem;
+        }
+        
+        .area-group p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
         .towns-list {
             display: flex;
             flex-wrap: wrap;
@@ -452,6 +389,31 @@
             font-size: 0.9rem;
         }
         
+        .coverage-note {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #dc143c;
+            margin-top: 2rem;
+        }
+        
+        .coverage-note strong {
+            color: #dc143c;
+        }
+        
+        /* FAQ Section - FIXED STYLING */
+        .faq-section {
+            background: #1a1a1a;
+            padding: 4rem 0;
+        }
+        
+        .faq-section h2 {
+            color: #dc143c;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -464,19 +426,23 @@
             padding: 2rem;
             border-radius: 10px;
             border-left: 4px solid #dc143c;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateY(-5px);
         }
         
         .faq-item h4 {
-            color: #dc143c;
+            color: #dc143c !important;
             margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
         
-        .coverage-note {
-            background: #1a1a1a;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid #dc143c;
-            margin-top: 2rem;
+        .faq-item p {
+            color: #e0e0e0 !important;
+            line-height: 1.6;
+            margin: 0;
         }
         
         .animate-in {
@@ -484,39 +450,10 @@
             transform: translateY(0);
         }
         
-        .service-card, .feature, .area-card, .faq-item {
+        .faq-item {
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.6s ease;
-        }
-        
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .services-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .emergency-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .areas-grid, .services-grid, .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .faq-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
         }
         
         /* Navigation active state - make it bold instead of red background */
@@ -536,40 +473,28 @@
             border-left: 3px solid #dc143c;
         }
         
-        /* Fix area cards display */
-        .service-areas {
-            padding: 4rem 0;
-        }
-        
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .area-card {
-            background: #2a2a2a;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid #444;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        
-        .area-card:hover {
-            transform: translateY(-5px);
-            border-color: #dc143c;
-        }
-        
-        .area-card h3 {
-            color: #dc143c;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .area-card p {
-            color: #e0e0e0;
-            line-height: 1.6;
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .faq-item {
+                padding: 1.5rem;
+            }
         }
     </style>
 </body>
