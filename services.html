@@ -155,35 +155,6 @@
             </div>
         </section>
 
-        <!-- Service Area Map -->
-        <section class="service-area-details">
-            <div class="container">
-                <h2>Electrical Services Coverage Area</h2>
-                <div class="area-content">
-                    <div class="main-areas">
-                        <h3>Service Areas</h3>
-                        <div class="area-list">
-                            <div class="area-group">
-                                <h4>Paisley and Surrounding Areas</h4>
-                            </div>
-                            <div class="area-group">
-                                <h4>Glasgow and Surrounding Areas</h4>
-                            </div>     
-                             <div class="area-group">
-                                <h4>Renfrewshire and Surrounding Areas</h4>
-                            </div>  
-                            <div class="area-group">
-                                <h4>Available for Projects Across Scotland</h4>
-                            </div>                            
-                        </div>
-                    </div>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
     <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
@@ -377,6 +348,81 @@
             color: #dc143c;
         }
         
+        /* Services List Section */
+        .services-list-section {
+            background: #0f0f0f;
+            padding: 4rem 0;
+        }
+        
+        .services-list-section h2 {
+            color: #dc143c;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .services-intro {
+            text-align: center;
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .services-list-card {
+            background: #2a2a2a;
+            border-radius: 15px;
+            padding: 3rem;
+            border: 1px solid #444;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .services-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .services-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .services-items li {
+            color: #e0e0e0;
+            padding: 0.75rem 0;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .services-items li:last-child {
+            border-bottom: none;
+        }
+        
+        .services-items li:before {
+            content: "⚡";
+            color: #dc143c;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            top: 0.6rem;
+        }
+        
+        .services-items li:hover {
+            color: #fff;
+            background: rgba(220, 20, 60, 0.1);
+            padding-left: 2.2rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
         /* FAQ Section - FIXED STYLING */
         .faq-section {
             background: #1a1a1a;
@@ -470,6 +516,21 @@
             
             .faq-item {
                 padding: 1.5rem;
+            }
+            
+            /* Services List Mobile */
+            .services-columns {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .services-list-card {
+                padding: 2rem;
+            }
+            
+            .services-intro {
+                font-size: 1.1rem;
+                padding: 0 1rem;
             }
         }
     </style>
