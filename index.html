@@ -10,7 +10,6 @@
   <!-- Indexing + canonical -->
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://rosstonnerelectrical.com/" />
-  <!-- Optional sitemap hint (still submit in Search Console) -->
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- Open Graph (Facebook/LinkedIn) -->
@@ -26,7 +25,7 @@
   <meta name="twitter:description" content="Reliable, NAPIT-registered electrical services across Scotland." />
   <meta name="twitter:image" content="https://rosstonnerelectrical.com/images/logo.jpeg" />
 
-  <!-- Keep your site verification -->
+  <!-- Site verification -->
   <meta name="google-site-verification" content="vdlCTlt337V6AsrYfvNixC_FH4EQM7Q_IoSB-7Y_QM4" />
 
   <!-- Icons -->
@@ -36,7 +35,7 @@
   <!-- CSS -->
   <link href="style.css" rel="stylesheet" />
 
-  <!-- Structured data -->
+  <!-- Structured data: Electrician (LocalBusiness) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,6 +71,7 @@
   }
   </script>
 
+  <!-- Structured data: WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -88,6 +88,7 @@
   </script>
 </head>
 <body>
+  <!-- ===== Header / Nav ===== -->
   <header class="topbar">
     <div class="logo">
       <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
@@ -108,34 +109,211 @@
   </nav>
 
   <main>
+    <!-- ===== Get in Touch ===== -->
     <section class="contact-gallery get-in-touch-section">
       <h2>Get in Touch</h2>
       <div class="contact-buttons">
         <a class="btn call-btn" href="tel:+447799531890">Call Us</a>
         <a class="btn email-btn" href="mailto:admin@rosstonnerelectrical.com">Email Us</a>
       </div>
-      <p><strong>Address:</strong> 29 Lounsdale Grove, Paisley, PA2 9LU</p>
     </section>
 
+    <!-- ===== Hero ===== -->
     <section class="hero text-center">
       <h2>Who We Are</h2>
-      <p>At RT Electrical, we take pride in delivering high quality electrical services across both domestic and commercial projects.</p>
+      <div class="hero-text">
+        <p>At RT Electrical, we take pride in delivering high quality electrical services across both domestic and commercial projects. With years of hands on experience in the industry, we bring expert knowledge, reliable service, and a commitment to safety and high standards on every job.</p>
+        <p>Fully registered with NAPIT, our work is carried out to the highest level of professionalism — neat, efficient, and always with attention to detail. Whether it’s a full rewire, consumer unit upgrade, lighting installation or fault finding, we aim to leave every client with a tidy finish and complete peace of mind.</p>
+        <p>We’re proud to offer honest advice, competitive pricing, and a service you can trust. No job is too small, and every project is treated with care and respect.</p>
+        <p>Get in touch today to discuss how RT Electrical can help with your next project.</p>
+      </div>
+      <div class="badges">
+        <span>✔ Fully Insured</span>
+        <span>✔ NAPIT Registered</span>
+        <span>✔ Emergency Callouts</span>
+      </div>
+    </section>
+
+    <!-- ===== Our Work Gallery ===== -->
+    <section class="our-work-section">
+      <div class="card">
+        <div class="gallery-carousel">
+          <h2>Our Work</h2>
+          <div class="gallery-nav">
+            <button class="nav-btn" onclick="prevGallerySlide()" aria-label="Previous">❮</button>
+            <div class="gallery-track" id="gallery-track">
+              <img alt="Gallery Image 1" class="gallery-img active" onclick="openLightbox(this.src)" src="images/gallery/image1.jpeg"/>
+              <img alt="Gallery Image 2" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image2.jpeg"/>
+              <img alt="Gallery Image 3" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image3.jpeg"/>
+              <img alt="Gallery Image 4" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image4.jpeg"/>
+              <img alt="Gallery Image 5" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image5.jpeg"/>
+              <img alt="Gallery Image 6" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image6.jpeg"/>
+              <img alt="Gallery Image 7" class="gallery-img" onclick="openLightbox(this.src)" src="images/gallery/image7.jpeg"/>
+            </div>
+            <button class="nav-btn" onclick="nextGallerySlide()" aria-label="Next">❯</button>
+          </div>
+          <div class="gallery-indicators" id="gallery-indicators"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="lightbox" onclick="closeLightbox()">
+      <img alt="Full Image" id="lightbox-img" src="#"/>
+    </div>
+
+    <!-- ===== Google Reviews ===== -->
+    <section class="google-reviews animated-section">
+      <div class="reviews-container">
+        <h2>What Our Customers Say</h2>
+        <div class="reviews-widget">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div class="elfsight-app-6b01a66c-4f0a-479d-a3f0-bfcd6e31fee8" data-elfsight-app-lazy></div>
+          <div class="reviews-placeholder" id="reviews-placeholder"></div>
+          <a href="https://www.google.com/search?q=RT+Electrical" target="_blank" class="google-button" rel="noopener">
+            View Our Google Reviews
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq animated-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="card">
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">Do you offer emergency services?</button>
+            <div class="accordion-body">Yes! We offer emergency callouts across Scotland.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Are you fully insured and certified?</button>
+            <div class="accordion-body">We are NAPIT approved and fully insured for domestic, commercial and industrial work.</div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">Can I get a free quote?</button>
+            <div class="accordion-body">Absolutely. Contact us anytime to schedule a free, no obligation quote.</div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- ===== Footer ===== -->
   <footer class="site-footer" style="text-align:center;padding:20px 10px;">
-    <p>© <span id="year"></span> RT Electrical · NAPIT Registered · 29 Lounsdale Grove, Paisley, PA2 9LU · 
-      <a href="tel:+447799531890">+44 7779 953 1890</a> · 
+    <small style="opacity:0.75;">
+      © <span id="year"></span> RT Electrical · NAPIT Registered ·
+      29 Lounsdale Grove, Paisley, PA2 9LU ·
+      <a href="tel:+447799531890">+44 7779 953 1890</a> ·
       <a href="mailto:admin@rosstonnerelectrical.com">admin@rosstonnerelectrical.com</a>
-    </p>
+    </small>
   </footer>
 
+  <!-- ===== Scripts ===== -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     function toggleMobileMenu() {
       const mobileNav = document.getElementById('mobile-nav');
       mobileNav.classList.toggle('active');
     }
+
+    let galleryIndex = 0;
+    const images = document.querySelectorAll('.gallery-img');
+    const totalImages = images.length;
+
+    function createIndicators() {
+      const indicatorsContainer = document.getElementById('gallery-indicators');
+      for (let i = 0; i < totalImages; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = i === 0 ? 'indicator active' : 'indicator';
+        indicator.onclick = () => goToSlide(i);
+        indicatorsContainer.appendChild(indicator);
+      }
+    }
+
+    function updateGallery() {
+      images.forEach(img => img.classList.remove('active'));
+      images[galleryIndex].classList.add('active');
+      const indicators = document.querySelectorAll('.indicator');
+      indicators.forEach((indicator, idx) => {
+        indicator.classList.toggle('active', idx === galleryIndex);
+      });
+    }
+
+    function nextGallerySlide() {
+      galleryIndex = (galleryIndex + 1) % totalImages;
+      updateGallery();
+    }
+
+    function prevGallerySlide() {
+      galleryIndex = (galleryIndex - 1 + totalImages) % totalImages;
+      updateGallery();
+    }
+
+    function goToSlide(index) {
+      galleryIndex = index;
+      updateGallery();
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    let current = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    function rotateTestimonials() {
+      if (!testimonials.length) return;
+      testimonials[current].classList.remove('active');
+      current = (current + 1) % testimonials.length;
+      testimonials[current].classList.add('active');
+    }
+
+    function initAccordion() {
+      document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+          const body = header.nextElementSibling;
+          const isOpen = body.style.display === 'block';
+          document.querySelectorAll('.accordion-body').forEach(item => item.style.display = 'none');
+          body.style.display = isOpen ? 'none' : 'block';
+        });
+      });
+    }
+
+    function initScrollAnimation() {
+      const sections = document.querySelectorAll(".animated-section");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("in-view");
+        });
+      }, { threshold: 0.1 });
+      sections.forEach(section => observer.observe(section));
+    }
+
+    window.addEventListener('load', () => {
+      createIndicators();
+      updateGallery();
+      initAccordion();
+      initScrollAnimation();
+      setInterval(nextGallerySlide, 4000);
+      setInterval(rotateTestimonials, 6000);
+    });
   </script>
+
+  <!-- Page-specific CSS -->
+  <style>
+    .our-work-section { background: none !important; padding: 0 !important; }
+    .our-work-section .card { text-align: center; }
+    .gallery-carousel h2 { margin-bottom: 2rem; color: #dc143c; }
+    .gallery-track { box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+    @media (max-width: 768px) {
+      .our-work-section .card { padding: 20px; }
+      .gallery-track { width: 250px; margin: 0 auto; }
+    }
+  </style>
 </body>
 </html>
